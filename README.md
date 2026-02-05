@@ -39,13 +39,6 @@ git merge branch-name
 git push origin master
 ```
 
-## Evaluation Criteria
-
-- **Data Quality (20%):** Immediately usable tidy data with correct types and explicit missing values
-- **Git History (20%):** Atomic commits with clear messages explaining your reasoning
-- **Documentation (30%):** Clear explanation of cleaning strategy, choices, and insights
-- **Reproducibility (30%):** Working `run.sh` script that recreates all results from scratch
-
 ## Reproducibility Requirements
 
 Your `run.sh` script structur some like this (not necessarily the exact structure but just a general idea):
