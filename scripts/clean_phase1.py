@@ -1,20 +1,21 @@
 import pandas as pd
+import os
 
-# Read raw mortality data
-mort = pd.read_csv("data/raw/child-mortality.csv")
+os.makedirs("data/preprocessed", exist_ok=True)
 
-# Convert wide format to tidy (long) format
-mort_tidy = mort.melt(
+mortality = pd.read_csv("data/raw/child-mortality.csv")
+
+mortality_tidy = mortality.melt(
     id_vars=["geo", "name"],
     var_name="year",
     value_name="mortality_rate"
 )
 
-# Save tidy output
-mort_tidy.to_csv(
-    "data/preprocessed/child_mortality_tidy.csv",
+mortality_tidy.to_csv(
+    "data/preprocessed/mortality_tidy.csv",
     index=False
 )
 
-print("Saved data/preprocessed/child_mortality_tidy.csv")
+print("Saved data/preprocessed/mortality_tidy.csv")
+
 
